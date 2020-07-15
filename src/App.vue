@@ -11,7 +11,7 @@
 </div>
 <div v-if="seeds != null">
   <table class="table table-hover table-bordered">
-            <thead>
+            <thead bgcolor="#ccffcc">
                 <tr>
                     <th>TIER</th>
                     <th>TIPO SEED</th>
@@ -24,11 +24,19 @@
             <tbody>
                 
                         <tr v-for="seed of seeds">
-                            <td>{{ seed.tier }}</td>
-                            <td>{{ seed.tipoSeed }}</td>
-                            <td>{{ seed.nome }}</td>
-                            <td>{{ seed.descricao }}</td>
-                            <td>
+                            <td v-if="seed.tipoSeed=='WILD'" bgcolor="#cc99ff"> 
+                                {{ seed.tier }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='WILD'" bgcolor="#cc99ff">
+                              {{ seed.tipoSeed }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='WILD'" bgcolor="#cc99ff">
+                              {{ seed.nome }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='WILD'" bgcolor="#cc99ff">
+                              {{ seed.descricao }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='WILD'" bgcolor="#cc99ff">
                               <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
                                 CRAFTS
                                 <i class="fas fa-angle-down"></i>
@@ -42,13 +50,62 @@
                                   </ul>
                                 </div>
                               </div>
-                                                                    <!--<ul>                                        
-                                        <li v-for="crafte of seed.crafts">
-                                          {{ crafte.descricao }}
-                                        </li>                                                                  
-                                      </ul>-->
+                            </td>
 
-                             
+                            <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> 
+                                {{ seed.tier }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
+                              {{ seed.tipoSeed }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
+                              {{ seed.nome }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
+                              {{ seed.descricao }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
+                              <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
+                                CRAFTS
+                                <i class="fas fa-angle-down"></i>
+                              </button>
+                              <div class="collapse" :id="seed.nome">
+                                <div>
+                                  <ul>                                        
+                                    <li v-for="crafte of seed.crafts">
+                                      {{ crafte.descricao }}
+                                    </li>                                                                  
+                                  </ul>
+                                </div>
+                              </div>
+                            </td>
+
+                            <td v-if="seed.tipoSeed=='PRIMAL'" bgcolor="#809fff"> 
+                                {{ seed.tier }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='PRIMAL'" bgcolor="#809fff">
+                              {{ seed.tipoSeed }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='PRIMAL'" bgcolor="#809fff">
+                              {{ seed.nome }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='PRIMAL'" bgcolor="#809fff">
+                              {{ seed.descricao }}
+                            </td>
+                            <td v-if="seed.tipoSeed=='PRIMAL'" bgcolor="#809fff">
+                              <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
+                                CRAFTS
+                                <i class="fas fa-angle-down"></i>
+                              </button>
+                              <div class="collapse" :id="seed.nome">
+                                <div>
+                                  <ul>                                        
+                                    <li v-for="crafte of seed.crafts">
+                                      {{ crafte.descricao }}
+                                    </li>                                                                  
+                                  </ul>
+                                </div>
+                              </div>
                             </td>                        
                         </tr>                    
             </tbody>
