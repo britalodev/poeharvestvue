@@ -29,11 +29,25 @@
                             <td>{{ seed.nome }}</td>
                             <td>{{ seed.descricao }}</td>
                             <td>
-                              <ul>
-                                <li v-for="crafte of seed.crafts">
-                                  {{ crafte.descricao }}
-                                </li>                            
-                              </ul>
+                              <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
+                                CRAFTS
+                              </button>
+                              <div class="collapse" :id="seed.nome">
+                                <div>
+                                  <ul>                                        
+                                    <li v-for="crafte of seed.crafts">
+                                      {{ crafte.descricao }}
+                                    </li>                                                                  
+                                  </ul>
+                                </div>
+                              </div>
+                                                                    <!--<ul>                                        
+                                        <li v-for="crafte of seed.crafts">
+                                          {{ crafte.descricao }}
+                                        </li>                                                                  
+                                      </ul>-->
+
+                             
                             </td>                        
                         </tr>                    
             </tbody>
