@@ -31,6 +31,7 @@
                             <td>
                               <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
                                 CRAFTS
+                                <i class="fas fa-angle-down"></i>
                               </button>
                               <div class="collapse" :id="seed.nome">
                                 <div>
