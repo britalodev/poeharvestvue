@@ -6,7 +6,11 @@
 
     <h1 class="text-center"> {{ titulo }} </h1>
 
-<table class="table table-hover table-bordered">
+<div v-if="seeds == null" class="text-center">
+  <img src="./assets/carregando.gif">
+</div>
+<div v-if="seeds != null">
+  <table class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>TIER</th>
@@ -37,7 +41,7 @@
             <tfoot>
             </tfoot>
         </table>
-
+  </div>
 <!--    <div id="formulario">
       
       <form class="form">
@@ -77,7 +81,7 @@
           titulo: 'Logo Path of Exile Harvest'
         },
 
-        seeds: {}
+        seeds: null
       }
 
     },
@@ -86,11 +90,13 @@
 
       let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');
       //let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/1');
-      promisse.then(res => res.json())
-      .then(seed => this.seeds = seed, err => console.log(err));
 
-      promisse.then(res => res.json())
-      .then(js => console.log(js));
+      
+
+        promisse.then(res => res.json())
+        .then(seed => this.seeds = seed, err => console.log(err));
+
+        console.log('teste');     
 
     }
 
