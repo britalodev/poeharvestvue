@@ -7,7 +7,7 @@
             data-target="#primal"
             aria-expanded="false"
             aria-controls="#primal"
-            style="width:100%; background-color:#3DC7F4; color:white"
+            style="width:100%; background-color:#3DC7F4; color:white; margin: 0 0 10px 0"
         >
             <h1>PRIMAL</h1>
         </button>

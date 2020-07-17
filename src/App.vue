@@ -3,9 +3,6 @@
     <div class="container">
       <logo :titulo="imgTitulo"/>
     </div>
-    <div class="texto-logo">
-      <h1> {{ titulo }} </h1>
-    </div>
       <tabela :seeds="seeds"/>
   </div>
 </template>

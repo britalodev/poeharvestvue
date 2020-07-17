@@ -7,7 +7,7 @@
             data-target="#wild"
             aria-expanded="false"
             aria-controls="#wild"
-            style="width:100%; background-color:#603499; color:white"
+            style="width:100%; background-color:#603499; color:white; margin: 0 0 10px 0"
         >
             <h1>WILD</h1>
         </button>

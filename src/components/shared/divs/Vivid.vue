@@ -7,7 +7,7 @@
             data-target="#vivid"
             aria-expanded="false"
             aria-controls="#vivid"
-            style="width:100%; background-color:FFF96C; color:white"
+            style="width:100%; background-color:FFF96C; color:white; margin: 0 0 10px 0"
             
         >
             <h1>VIVID</h1>
