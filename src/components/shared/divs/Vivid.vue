@@ -32,7 +32,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="seed of seedsFiltro">
+                <tr v-for="seed of seedsFiltro" :key="seed">
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
@@ -45,7 +45,7 @@
                         <div class="collapse" :id="seed.nome">
                             <div>
                                 <ul>                                        
-                                    <li v-for="crafte of seed.crafts"> {{ crafte.descricao }} </li>
+                                    <li v-for="crafte of seed.crafts" :key="crafte"> {{ crafte.descricao }} </li>
                                 </ul>
                             </div>
                         </div>
