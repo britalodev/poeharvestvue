@@ -13,7 +13,12 @@
         </button>
       
         <div id="wild" class="collapse">
-        <center><input type="search" class="filtroNome" @input="filtroNome = $event.target.value" placeholder="Filtre pelo nome"></center>
+        <center>
+            <div class="filtrando">
+                <i class='filtroNomeLupa fas fa-search'/>
+                <input type="search" class="filtroNome fas" @input="filtroNome = $event.target.value" placeholder="Filtre pelo nome">
+            </div>
+        </center>
         <table class="table table-hover table-bordered">
             <thead style="width:100%">
                 <tr>
@@ -92,20 +97,38 @@
     }
     
     .filtroNome {
-        display: inline-block;
-        width: 95%;
+        width: 93%;
         height: 50px;
         margin-left: 1%;        
         background-color: #4E2287;
-        opacity: 0.8;
-        border-style: solid;
-        border-color: red;
+        opacity: 1;
+        border-style: none;
         text-align: center;
         align-items: center;
         font-size: 45px;
-        color: orange;
+        color: #99FFFA;        
+        margin: 0 0 0 0;
     }
+
+    .filtroNomeLupa {        
+        width: 5%;
+        height: 50px;      
+        background-color: #4E2287;
+        opacity: 0.7;        
+        font-size: 45px;
+        color: black;
+        margin: 0 0 0 0;
+    }    
     
+    .filtrando {
+        background-color: #4E2287;
+        border-style: solid;
+        border-color:#99FFFA;
+        width: 95%;
+        margin-top: 2px;
+        margin-bottom: 3px;;
+    }
+
     th {
         text-align: center;
         background-color: #BB97EB;
