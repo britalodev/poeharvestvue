@@ -1,7 +1,7 @@
 <template>
     <div v-if="seeds != null" class="table-responsive-md">
         <button                  
-            class="btn btn-primary"
+            class="btn btn-primary opacidade"
             type="button"
             data-toggle="collapse"
             data-target="#wild"
@@ -13,6 +13,8 @@
         </button>
       
         <div id="wild" class="collapse">
+        <input type="search" class="filtroNome" @input="filtro = $event.target.value" placeholder="Filtre pelo nome (Ainda não funciona)">
+        <input type="search" class="filtroEfeito" @input="filtro = $event.target.value" placeholder="Filtre pelo efeito (Ainda não funciona)">
         <table class="table table-hover table-bordered">
             <thead bgcolor="#ccffcc" style="width:100%">
                 <tr>
@@ -61,4 +63,28 @@
 
 <style scoped>
 
+    .opacidade {
+        opacity: 0.7;
+    }
+
+    .filtro {
+        display: block;
+        width: 100%;
+    }
+    
+    .filtroNome {
+        display: inline-block;
+        width: 48%;
+        margin-left: 1%;
+    }
+
+    .filtroEfeito {
+        display: inline-block;
+        width: 48%;
+        margin-right: 1%;
+    }
+    
+    th {
+        text-align: center;
+    }
 </style>

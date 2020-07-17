@@ -1,7 +1,7 @@
 <template>
         <div v-if="seeds != null" class="table-responsive-md">
         <button                  
-            class="btn btn-warning"
+            class="btn btn-warning opacidade"
             type="button"
             data-toggle="collapse"
             data-target="#vivid"
@@ -14,6 +14,8 @@
         </button>
       
         <div id="vivid" class="collapse">
+        <input type="search" class="filtroNome" @input="filtro = $event.target.value" placeholder="Filtre pelo nome (Ainda não funciona)">
+        <input type="search" class="filtroEfeito" @input="filtro = $event.target.value" placeholder="Filtre pelo efeito (Ainda não funciona)">
         <table class="table table-hover table-bordered">
             <thead bgcolor="#ccffcc" style="width:100%">
                 <tr>
@@ -27,11 +29,11 @@
 
             <tbody>
                 <tr v-for="seed of seeds">
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#cc99ff"> {{ seed.tier }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#cc99ff"> {{ seed.tipoSeed }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#cc99ff"> {{ seed.nome }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#cc99ff"> {{ seed.descricao }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#cc99ff">
+                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
+                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
+                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
+                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.descricao }} </td>
+                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
                         <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
                             CRAFTS
                             <i class="fas fa-angle-down"></i>
@@ -59,5 +61,29 @@
 </script>
 
 <style scoped>
+    
+    .opacidade {
+        opacity: 0.7;
+    }
 
+    .filtro {
+        display: block;
+        width: 100%;
+    }
+    
+    .filtroNome {
+        display: inline-block;
+        width: 48%;
+        margin-left: 1%;
+    }
+
+    .filtroEfeito {
+        display: inline-block;
+        width: 48%;
+        margin-right: 1%;
+    }
+
+    th {
+        text-align: center;
+    }
 </style>
