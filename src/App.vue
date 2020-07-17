@@ -43,5 +43,6 @@
   .texto-logo {
     text-align: center;
     font-family: Helvetica, sans-serif;
+    color: blanchedalmond;
   }
 </style>
