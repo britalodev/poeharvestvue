@@ -7,9 +7,9 @@
             data-target="#wild"
             aria-expanded="false"
             aria-controls="#wild"
-            style="width:100%; background-color:#603499; color:white; margin: 0 0 10px 0"
+            style="width:100%; background-color:#603499; color:white; margin: 0 0 10px 0; font-family: OFL;"
         >
-            <h1>WILD</h1>
+            <h1>WILD        <i class="fas fa-angle-down"/></h1>
         </button>
       
         <div id="wild" class="collapse">
@@ -108,6 +108,7 @@
         font-size: 45px;
         color: #99FFFA;        
         margin: 0 0 0 0;
+        font-family: OFL;
     }
 
     .filtroNomeLupa {        
@@ -136,6 +137,5 @@
         text-decoration: bold;
         opacity: 0.7;
     }
-    
 
 </style>

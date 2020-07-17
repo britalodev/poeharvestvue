@@ -7,10 +7,10 @@
             data-target="#vivid"
             aria-expanded="false"
             aria-controls="#vivid"
-            style="width:100%; background-color:FFF96C; color:white; margin: 0 0 10px 0"
+            style="width:100%; background-color:FFF96C; color:white; margin: 0 0 10px 0; font-family: OFL;"
             
         >
-            <h1>VIVID</h1>
+            <h1>VIVID   <i class="fas fa-angle-down"/></h1>
         </button>
       
         <div id="vivid" class="collapse">
@@ -105,6 +105,7 @@
         align-items: center;
         font-size: 45px;
         color: #E73121;
+        font-family: OFL;
     }
 
     .filtroNomeLupa {        

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="seeds == null" class="text-center">
-      <img src="../../../assets/carregando.gif"/>
+      <img src="../../../assets/imgs/carregando.gif"/>
     </div>
 
     <wild :seeds="seeds"/>

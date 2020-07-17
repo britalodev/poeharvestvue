@@ -7,9 +7,9 @@
             data-target="#primal"
             aria-expanded="false"
             aria-controls="#primal"
-            style="width:100%; background-color:#3DC7F4; color:white; margin: 0 0 10px 0"
+            style="width:100%; background-color:#3DC7F4; color:white; margin: 0 0 10px 0; font-family: OFL;"
         >
-            <h1>PRIMAL</h1>
+            <h1>PRIMAL  <i class="fas fa-angle-down"/></h1>
         </button>
       
         <div id="primal" class="collapse">
@@ -99,6 +99,7 @@
         font-size: 45px;
         color: #603499;
         margin: 0 0 0 0;
+        font-family: OFL;
     }
 
     .filtroNomeLupa {        
