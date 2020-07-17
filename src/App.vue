@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="container">
       <logo :titulo="imgTitulo"/>
     </div>
@@ -35,6 +35,7 @@
       promisse.then(res => res.json())
       .then(seed => this.seeds = seed, err => console.log(err));
     }
+
   };
 </script>
 

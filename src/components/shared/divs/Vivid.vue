@@ -7,17 +7,16 @@
             data-target="#vivid"
             aria-expanded="false"
             aria-controls="#vivid"
-            style="width:100%"
+            style="width:100%; background-color:FFF96C; color:white"
             
         >
             <h1>VIVID</h1>
         </button>
       
         <div id="vivid" class="collapse">
-        <input type="search" class="filtroNome" @input="filtro = $event.target.value" placeholder="Filtre pelo nome (Ainda não funciona)">
-        <input type="search" class="filtroEfeito" @input="filtro = $event.target.value" placeholder="Filtre pelo efeito (Ainda não funciona)">
+        <center><input type="search" class="filtroNome" @input="filtroNome = $event.target.value" placeholder="Filtre pelo nome"></center>
         <table class="table table-hover table-bordered">
-            <thead bgcolor="#ccffcc" style="width:100%">
+            <thead style="width:100%">
                 <tr>
                     <th>TIER</th>
                     <th>TIPO SEED</th>
@@ -28,7 +27,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="seed of seeds">
+                <tr v-for="seed of seedsFiltro">
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
@@ -56,7 +55,25 @@
 
 <script>
     export default {
-        props: ['seeds']
+        props: ['seeds'],
+        
+        data() {
+            return {
+                filtroNome: null,
+                filtroEfeito: null
+            }
+        },
+
+        computed: {
+            seedsFiltro() {
+                if(this.filtroNome) {
+                    let exp = new RegExp(this.filtroNome.trim(), 'i');
+                    return this.seeds.filter(seed => exp.test(seed.nome));
+                } else {
+                    return this.seeds;
+                }
+            }
+        }
     }
 </script>
 
@@ -73,17 +90,24 @@
     
     .filtroNome {
         display: inline-block;
-        width: 48%;
-        margin-left: 1%;
+        width: 95%;
+        height: 50px;
+        margin-left: 1%;        
+        background-color: #FFFCB2;
+        opacity: 0.8;
+        border-style: solid;
+        border-color: orange;
+        text-align: center;
+        align-items: center;
+        font-size: 45px;
+        color: orangered;
     }
-
-    .filtroEfeito {
-        display: inline-block;
-        width: 48%;
-        margin-right: 1%;
-    }
-
+    
     th {
         text-align: center;
+        background-color: #FFF96C;
+        color: black;
+        text-decoration: bold;
+        opacity: 0.7;
     }
 </style>
