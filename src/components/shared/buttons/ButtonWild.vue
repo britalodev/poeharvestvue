@@ -1,11 +1,11 @@
 <template>
-  <a href="/wild">
+  <router-link to="/wild">
     <button class="btn btn-dark btn-wild" type="button">
       <h1>
         WILD
       </h1>
     </button>
-  </a>
+  </router-link>
 </template>
 
 <script>

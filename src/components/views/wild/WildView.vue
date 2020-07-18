@@ -35,14 +35,19 @@
         },
 
         created() {
-            
-            carregaSeeds :
-            {
+            carregaSeeds :{
                 let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
-                promisse.then(res => res.json())            
+                promisse.then(res => res.json())
                 .then(seed => this.seeds = seed, err => console.log(err));
-                this.$forceUpdate();
-                return seeds;                
+            }            
+
+            background : 
+            {
+                const image = document.getElementById('back');
+                image.classList.remove('back-vivid');
+                image.classList.remove('back-primal');
+                image.classList.remove('back-home');
+                image.classList.add('back-wild');
             }
         }
 
@@ -50,7 +55,7 @@
 </script>
 
 <style>
-    #back {
+    .back-wild {
         background-image: url('./background-wild.jpg');
         background-repeat: no-repeat;
         background-size: cover;

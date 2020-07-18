@@ -35,16 +35,28 @@
         },
 
         created() {
-            let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
-            promisse.then(res => res.json())
-            .then(seed => this.seeds = seed, err => console.log(err));
+        
+            carregaSeeds :{
+                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
+                promisse.then(res => res.json())
+                .then(seed => this.seeds = seed, err => console.log(err));
+            }            
+
+            background : 
+            {
+                const image = document.getElementById('back');
+                image.classList.remove('back-wild');
+                image.classList.remove('back-primal');
+                image.classList.remove('back-home');
+                image.classList.add('back-vivid');
+            }
         }
 
     };
 </script>
 
 <style>
-    #back {
+    .back-vivid {
         background-image: url('./background-vivid.jpg');
         background-repeat: no-repeat;
         background-size: cover;

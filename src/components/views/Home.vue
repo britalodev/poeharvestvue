@@ -33,13 +33,23 @@
             return {
                 routes,
             }
+        },
+        
+        created() {
+            background: {
+                const image = document.getElementById('back');
+                image.classList.remove('back-wild');
+                image.classList.remove('back-vivid');
+                image.classList.remove('back-primal');
+                image.classList.add('back-home');
+            }
         }
     }
 
 </script>
 
 <style>
-    body {
+    .back-home {
         background-image: url('../../assets/imgs/background-home.png');
         background-repeat: no-repeat;
         background-size: cover;

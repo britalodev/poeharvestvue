@@ -1,11 +1,11 @@
 <template>
-  <a href="/primal">
+  <router-link to="/primal">
     <button class="btn btn-dark opacidade" type="button">
       <h1>
         PRIMAL
       </h1>
     </button>
-  </a>
+  </router-link>
 </template>
 
 <script>
