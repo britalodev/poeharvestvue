@@ -14,10 +14,11 @@
 </template>
 
 <script>
+
     import Wild from '../../shared/divs/Wild.vue'
 
-        import Vivid from '../../shared/buttons/ButtonVivid.vue';
-        import Primal from '../../shared/buttons/ButtonPrimal.vue';
+    import Vivid from '../../shared/buttons/ButtonVivid.vue';
+    import Primal from '../../shared/buttons/ButtonPrimal.vue';
 
     export default {
 
@@ -29,21 +30,27 @@
 
         data() {
             return {
-              'seeds' : null
-            }
+                'seeds': null
+            }   
         },
 
         created() {
-            let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
-            promisse.then(res => res.json())
-            .then(seed => this.seeds = seed, err => console.log(err));
+            
+            carregaSeeds :
+            {
+                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
+                promisse.then(res => res.json())            
+                .then(seed => this.seeds = seed, err => console.log(err));
+                this.$forceUpdate();
+                return seeds;                
+            }
         }
 
     };
 </script>
 
 <style>
-    body {
+    #back {
         background-image: url('./background-wild.jpg');
         background-repeat: no-repeat;
         background-size: cover;

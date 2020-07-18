@@ -43,7 +43,7 @@
 </script>
 
 <style>
-    body {
+    #back {
         background-image: url('./background-primal.jpg');
         background-repeat: no-repeat;
         background-size: cover;

@@ -30,9 +30,10 @@
         },
 
         data() {
-            routes
+            return {
+                routes,
+            }
         }
-
     }
 
 </script>

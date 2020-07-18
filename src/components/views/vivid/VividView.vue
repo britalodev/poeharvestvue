@@ -44,7 +44,7 @@
 </script>
 
 <style>
-    body {
+    #back {
         background-image: url('./background-vivid.jpg');
         background-repeat: no-repeat;
         background-size: cover;
