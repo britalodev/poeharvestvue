@@ -1,11 +1,11 @@
 <template>
-  <router-link to="/vivid">
+  <a href="/vivid">
     <button class="btn btn-dark opacidade" type="button">
       <h1>
         VIVID
       </h1>
     </button>
-  </router-link>
+  </a>
 </template>
 
 <script>
