@@ -3,44 +3,30 @@
     <div class="container">
       <logo :titulo="imgTitulo"/>
     </div>
-      <tabela :seeds="seeds"/>
+    <div class="container">      
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
 
   import Logo from './components/shared/logo/Logo.vue';
-  import Table from './components/shared/tabela/Tabela.vue';
 
   export default {
 
     components: {
-      'logo': Logo,
-      'tabela': Table
+      'logo': Logo
     },
 
     data() {
       return {
-        titulo: "Seeds PoE",
-        imgTitulo: 'Logo Path Of Exile Liga Harvest',
-        seeds: null
+        imgTitulo: 'Logo Path Of Exile Liga Harvest'
       }
-    },
-
-    created() {
-      let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
-      promisse.then(res => res.json())
-      .then(seed => this.seeds = seed, err => console.log(err));
     }
-
+    
   };
 </script>
 
-<style scoped>
-
-  .texto-logo {
-    text-align: center;
-    font-family: Helvetica, sans-serif;
-    color: blanchedalmond;
-  }
+<style scoped>    
 </style>

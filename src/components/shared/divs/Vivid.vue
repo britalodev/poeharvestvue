@@ -1,19 +1,6 @@
 <template>
         <div v-if="seeds != null" class="table-responsive-md">
-        <button                  
-            class="btn btn-warning opacidade"
-            type="button"
-            data-toggle="collapse"
-            data-target="#vivid"
-            aria-expanded="false"
-            aria-controls="#vivid"
-            style="width:100%; background-color:FFF96C; color:white; margin: 0 0 10px 0; font-family: OFL;"
-            
-        >
-            <h1>VIVID   <i class="fas fa-angle-down"/></h1>
-        </button>
-      
-        <div id="vivid" class="collapse">
+        <div id="vivid">
         <center>
             <div class="filtrando">
                 <i class='filtroNomeLupa fas fa-search'/>

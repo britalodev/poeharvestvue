@@ -1,6 +1,6 @@
 <template>
     <div class="logo container">
-      <center><img src="../../../assets/imgs/POELogoHarvest.png" :alt="titulo" height="300" width="100%"></center>
+      <center><img src="../../../assets/imgs/POELogoHarvest.png" :alt="titulo" height="300" width="80%"></center>
     </div>
 </template>
 

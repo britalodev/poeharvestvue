@@ -1,18 +1,6 @@
 <template>
-    <div v-if="seeds != null" class="table-responsive-md">
-        <button                  
-            class="btn btn-primary opacidade"
-            type="button"
-            data-toggle="collapse"
-            data-target="#wild"
-            aria-expanded="false"
-            aria-controls="#wild"
-            style="width:100%; background-color:#603499; color:white; margin: 0 0 10px 0; font-family: OFL;"
-        >
-            <h1>WILD        <i class="fas fa-angle-down"/></h1>
-        </button>
-      
-        <div id="wild" class="collapse">
+    <div v-if="seeds != null" class="table-responsive-md">             
+        <div id="wild">
         <center>
             <div class="filtrando">
                 <i class='filtroNomeLupa fas fa-search'/>

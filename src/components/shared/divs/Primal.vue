@@ -1,18 +1,6 @@
 <template>            
-    <div v-if="seeds != null" class="table-responsive-md">
-        <button                  
-            class="btn btn-primary opacidade"
-            type="button"
-            data-toggle="collapse"
-            data-target="#primal"
-            aria-expanded="false"
-            aria-controls="#primal"
-            style="width:100%; background-color:#3DC7F4; color:white; margin: 0 0 10px 0; font-family: OFL;"
-        >
-            <h1>PRIMAL  <i class="fas fa-angle-down"/></h1>
-        </button>
-      
-        <div id="primal" class="collapse">
+    <div v-if="seeds != null" class="table-responsive-md">        
+        <div id="primal">
         <center>
             <div class="filtrando">
                 <i class='filtroNomeLupa fas fa-search'/>
@@ -128,5 +116,6 @@
         text-decoration: bold;
         opacity: 0.7;
     }
+
 
 </style>
