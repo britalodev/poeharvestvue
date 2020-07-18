@@ -45,7 +45,7 @@
 
 <style>
     body {
-        background-image: url('../../../assets/imgs/background-vivid.jpg');
+        background-image: url('./background-vivid.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 

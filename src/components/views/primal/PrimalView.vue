@@ -44,7 +44,7 @@
 
 <style>
     body {
-        background-image: url('../../../assets/imgs/background-primal.jpg');
+        background-image: url('./background-primal.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 

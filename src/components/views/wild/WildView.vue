@@ -44,7 +44,7 @@
 
 <style>
     body {
-        background-image: url('../../../assets/imgs/background-wild.jpg');
+        background-image: url('./background-wild.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 
