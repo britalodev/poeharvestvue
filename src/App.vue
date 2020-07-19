@@ -21,8 +21,17 @@
 
     data() {
       return {
-        imgTitulo: 'Logo Path Of Exile Liga Harvest'
+        imgTitulo: 'Logo Path Of Exile Liga Harvest',
+        'seeds': null
       }
+    },
+
+    created() {
+      carregaSeeds :{
+                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
+                promisse.then(res => res.json())
+                .then(seed => this.seeds = seed, err => console.log(err));
+            }
     }
     
   };

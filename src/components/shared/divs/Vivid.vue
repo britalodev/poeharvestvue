@@ -1,5 +1,6 @@
 <template>
-        <div v-if="seeds != null" class="table-responsive-md">
+    <div>
+        <div v-if="this.seeds != null" class="table-responsive-md">
         <div id="vivid">
         <center>
             <div class="filtrando">
@@ -19,7 +20,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="seed of seedsFiltro" :key="seed">
+                <tr v-for="seed of seedsFiltro">
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
                     <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
@@ -32,7 +33,7 @@
                         <div class="collapse" :id="seed.nome">
                             <div>
                                 <ul>                                        
-                                    <li v-for="crafte of seed.crafts" :key="crafte"> {{ crafte.descricao }} </li>
+                                    <li v-for="crafte of seed.crafts"> {{ crafte.descricao }} </li>
                                 </ul>
                             </div>
                         </div>
@@ -43,17 +44,27 @@
         </table>
       </div>
     </div>
+    </div>
 </template>
 
 <script>
-    export default {
-        props: ['seeds'],
-        
+    export default {       
+
+
         data() {
             return {
                 filtroNome: null,
-                filtroEfeito: null
+                'seeds': null
             }
+        },
+
+        created() {      
+            this.seeds = this.$parent.$parent.seeds;            
+            if(this.seeds == null) {
+                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all')
+                .then(res => res.json())
+                .then(seed => this.seeds = seed, err => console.log(err));
+            }                 
         },
 
         computed: {
@@ -121,4 +132,5 @@
         text-decoration: bold;
         opacity: 0.7;
     }
+
 </style>

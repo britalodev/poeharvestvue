@@ -19,7 +19,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="seed of seedsFiltro" :key="seed">
+                <tr v-for="seed of seedsFiltro">
                     <td v-if="seed.tipoSeed=='WILD'" bgcolor="#BB97EB"> {{ seed.tier }} </td>
                     <td v-if="seed.tipoSeed=='WILD'" bgcolor="#BB97EB"> {{ seed.tipoSeed }} </td>
                     <td v-if="seed.tipoSeed=='WILD'" bgcolor="#BB97EB"> {{ seed.nome }} </td>
@@ -32,7 +32,7 @@
                         <div class="collapse" :id="seed.nome">
                             <div>
                                 <ul>                                        
-                                    <li v-for="crafte of seed.crafts" :key="crafte"> {{ crafte.descricao }} </li>
+                                    <li v-for="crafte of seed.crafts"> {{ crafte.descricao }} </li>
                                 </ul>
                             </div>
                         </div>
@@ -47,8 +47,15 @@
 
 <script>
     export default {
-        
-        props: ['seeds'],
+
+        created() {      
+            this.seeds = this.$parent.$parent.seeds;            
+            if(this.seeds == null) {
+                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all')
+                .then(res => res.json())
+                .then(seed => this.seeds = seed, err => console.log(err));
+            }                 
+        },
 
         data() {
             return {

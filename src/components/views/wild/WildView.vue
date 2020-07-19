@@ -4,11 +4,8 @@
             <btnVivid/>            
             <btnPrimal/>
         </div>
-        <div v-if="seeds == null" class="text-center">
-            <img src="../../../assets/imgs/carregando.gif"/>
-        </div>
         <div class="container">            
-            <wild :seeds="seeds"/>
+            <wild/>
         </div>
     </div>
 </template>
@@ -27,21 +24,15 @@
             'btnVivid': Vivid,
             'btnPrimal': Primal
         },
-
+        
         data() {
             return {
                 'seeds': null
-            }   
+            }
         },
 
         created() {
-            carregaSeeds :{
-                let promisse = this.$http.get('https://poeharvest.herokuapp.com/seed/all');     
-                promisse.then(res => res.json())
-                .then(seed => this.seeds = seed, err => console.log(err));
-            }            
-
-            background : 
+            background: 
             {
                 const image = document.getElementById('back');
                 image.classList.remove('back-vivid');
@@ -61,4 +52,5 @@
         background-size: cover;
         background-attachment: fixed; 
     }
+
 </style>

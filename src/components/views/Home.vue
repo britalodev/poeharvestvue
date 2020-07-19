@@ -21,8 +21,7 @@
     import Wild from '../shared/buttons/ButtonWild.vue';
 
 
-    export default {
-
+    export default  {
         components:{
             'btnPrimal': Primal,
             'btnVivid': Vivid,
@@ -31,7 +30,7 @@
 
         data() {
             return {
-                routes,
+                routes
             }
         },
         
