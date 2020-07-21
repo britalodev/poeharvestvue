@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container">
-      <logo :titulo="imgTitulo"/>
+        <logo :titulo="imgTitulo"/>
     </div>
     <div class="container">      
       <router-view></router-view>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <div class="container">
             <btnVivid/>            
             <btnPrimal/>
@@ -47,7 +47,7 @@
 
 <style>
     .back-wild {
-        background-image: url('./background-wild.jpg');
+        background-image: url('../../../assets/imgs/backgrounds/background-wild.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 

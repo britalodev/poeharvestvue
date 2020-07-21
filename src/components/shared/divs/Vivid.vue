@@ -1,49 +1,60 @@
 <template>
-    <div>
+    <div class="container">
+        <div :class=" {'carregando' : this.seeds == null, 'carregou' : this.seeds != null}">
+            <center>
+                <img src="../../../assets/imgs/carregando.gif"/>
+            </center>
+        </div>
+        
         <div v-if="this.seeds != null" class="table-responsive-md">
-        <div id="vivid">
-        <center>
-            <div class="filtrando">
-                <i class='filtroNomeLupa fas fa-search'/>
-                <input type="search" class="filtroNome fas" @input="filtroNome = $event.target.value" placeholder="Filtre pelo nome">
-            </div>            
-        </center>
-        <table class="table table-hover table-bordered">
-            <thead style="width:100%">
-                <tr>
-                    <th>TIER</th>
-                    <th>TIPO SEED</th>
-                    <th>NOME</th>
-                    <th>DESCRICAO</th>
-                    <th>CRAFTS</th>
-                </tr>
-            </thead>
+            
+            <div id="filtro-vivid">
+                <center>
+                    <div class="filtrando">
+                        <i class='filtroNomeLupa fas fa-search'/>
+                        <input type="search" class="filtroNome fas" @input="filtroNome = $event.target.value" placeholder="Filter by name">
+                    </div>            
+                </center>
+            </div>
 
-            <tbody>
-                <tr v-for="seed of seedsFiltro">
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.descricao }} </td>
-                    <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
-                        <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
-                            CRAFTS
-                            <i class="fas fa-angle-down"></i>
-                        </button>
-                        <div class="collapse" :id="seed.nome">
-                            <div>
-                                <ul>                                        
-                                    <li v-for="crafte of seed.crafts"> {{ crafte.descricao }} </li>
-                                </ul>
+            <table class="table table-hover table-bordered">
+                
+                <thead style="width:100%">
+                    <tr>
+                        <th>TIER</th>
+                        <th>TIPO SEED</th>
+                        <th>NOME</th>
+                        <th>DESCRICAO</th>
+                        <th>CRAFTS</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr v-for="seed of seedsFiltro" :key="seed.descricao">
+                        <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tier }} </td>
+                        <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.tipoSeed }} </td>
+                        <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.nome }} </td>
+                        <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3"> {{ seed.descricao }} </td>
+                        <td v-if="seed.tipoSeed=='VIVID'" bgcolor="#ffffb3">
+                            <button class="btn btn-primary" type="button" data-toggle="collapse" :data-target="'#'+seed.nome" aria-expanded="false" :aria-controls="'#'+seed.nome">
+                                CRAFTS
+                                <i class="fas fa-angle-down"></i>
+                            </button>
+                            <div class="collapse" :id="seed.nome">
+                                <div>
+                                    <ul>                                        
+                                        <li v-for="crafte of seed.crafts" :key="crafte.descricao"> {{ crafte.descricao }} </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-            <tfoot></tfoot>
-        </table>
-      </div>
-    </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot></tfoot>
+
+            </table>
+        </div>
     </div>
 </template>
 
@@ -131,6 +142,21 @@
         color: black;
         text-decoration: bold;
         opacity: 0.7;
+        font-family: OFL;
+    }
+
+    td {        
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    .carregando {
+        display: inline;
+    }
+
+    .carregou {
+        display: none;
     }
 
 </style>

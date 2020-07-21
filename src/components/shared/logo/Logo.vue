@@ -1,10 +1,15 @@
 <template>
     <div class="logo container">
-      <center><img src="../../../assets/imgs/POELogoHarvest.png" :alt="titulo" height="300" width="80%"></center>
+        <router-link to="/">
+            <center><img src="../../../assets/imgs/POELogoHarvest.png" :alt="titulo" height="300" width="80%"></center>
+        </router-link>
     </div>
 </template>
 
 <script>
+
+    import { routes } from '../../../routes';
+          
     export default {
 
         props: ['titulo']

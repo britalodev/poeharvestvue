@@ -49,7 +49,7 @@
 
 <style>
     .back-home {
-        background-image: url('../../assets/imgs/background-home.png');
+        background-image: url('../../assets/imgs/backgrounds/background-home.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 
