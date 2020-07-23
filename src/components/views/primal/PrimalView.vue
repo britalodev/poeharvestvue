@@ -39,7 +39,7 @@
 
 <style>
     .back-primal {
-        background-image: url('./Background-primal.jpg');
+        background-image: url('../../../assets/imgs/backgrounds/background-primal.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 
