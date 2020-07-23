@@ -42,7 +42,7 @@
 
 <style>
     .back-vivid {
-        background-image: url('./background-vivid.jpg');
+        background-image: url('./Background-vivid.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed; 
